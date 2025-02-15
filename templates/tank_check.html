@@ -1,35 +1,54 @@
 <!-- page 2 -->
 {% extends 'base.html' %}
 
-
-
 {% block main_text %}
+
+{% if session.get('is_correct') is not none %}
+    <script>
+        window.onload = function() {
+            let message = "{% if session.get('is_correct') %}Yes, you are correct!{% else %}No, you are wrong.{% endif %}";
+            alert(message); // Show the message in an alert
+
+            setTimeout(() => {
+                window.location.href = "{{ url_for('ship_situation') }}"; // Redirect after showing the alert
+            }, 0); // Short delay to allow the alert to show before redirect
+        };
+    </script>
+    {% set _ = session.pop('is_correct') %}  {# Remove feedback after displaying #}
+{% endif %}
+
+<div class="grid-content">
+    <div class="left-part">
+        <br>
+    <div class="container">
+        
+        <img src="{{ url_for('static', filename='img/tankin.jpg') }}" 
+        alt="Example Image" 
+        style="width: 80%; height: auto; ">
+    </div>
+        <br><br>
+    </div>
+    <div class="right-part">
+        <p class="t_title">
+            Let's try it out! If the alarm rings and you saw the situation below, what could be the cause of the problem?
+        
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+        
+                {% for subfield in form.tank_practice %}
+                    <label>
+                        {{ subfield }}{{ subfield.label.text }}
+                    </label><br>
+                {% endfor %}
+                <br>
+
+                <input type="submit" value="Continue" class = "continue-btn"> <!-- Submit Button -->
+            </form>
+        </p>
+    </div>
+</div>
 <br>
-<p class="t_title">
-    If the alarm rings and you saw the situation below, what could be the cause of the problem?
-</p>
 
-<p class="t_title">
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        
-        <!-- Question 1 -->
-        <!-- <td>What might cause the problem?<br></td> -->
-        {% for subfield in form.tank_cause %}
-            <label>
-                {{ subfield }}{{ subfield.label.text }}
-            </label><br>
-        {% endfor %}
-        <br>
-        <img src="{{ url_for('static', filename='img/tank_in.jpg') }}" alt="Example Image" style="width: 90%; height: auto;">
-        
-        <br>
-        <br>
-        <!-- Submit Button -->
-        <input type="submit" value="Continue" class = "continue-btn">
-    </form>
-
-</p>
 
 
 {% endblock %}

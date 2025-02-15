@@ -3,9 +3,25 @@
     grid-template-rows: auto 50px;
     margin-top: auto; 
     margin-bottom: auto;
-    margin-left: 17%;
-    margin-right: 17%;
+    margin-left: 10%;
+    margin-right: 10%;
     font-size: 20px;
+}
+
+.grid-content {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 10px; /* Optional spacing */
+}
+
+.left-part {
+    /* background-color: lightgray;  */
+    padding: 10px;
+}
+
+.right-part {
+    /* background-color: lightblue;  */
+    padding: 10px;
 }
 
 .instruction{
@@ -35,8 +51,14 @@ form {
     margin:  auto;
 }
 
-.my-table td {
-    width: 500px;
+/* .my-table td {
+    width: 600px;
+} */
+
+.my-table {
+    width: 400px;
+    min-width: 350px;
+    border-collapse: collapse; /* Optional */
 }
 
 .radio-button {
@@ -65,7 +87,7 @@ form {
 
 .feedback-input {
     height: 180px;
-    width: 90%;
+    width: 100%;
     font-size: 18px;
     font-family: Arial;
     margin: auto auto;

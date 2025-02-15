@@ -1,0 +1,42 @@
+<!-- page 6 -->
+{% extends 'base.html' %}
+
+
+{% block main_text %}
+
+<div class="grid-content">
+    <div class="left-part">
+        <br>
+        <div class="container">
+            <img src="{{ url_for('static', filename='img/tankin.jpg') }}" 
+            alt="Example Image" style="width: 80%; height: auto;">
+        </div>
+    </div>
+    <div class="right-part">
+        <p class="t_title">
+            You run to check the oxygen supply system. The oxygen containers look like in the picture. 
+            If the system cannot be repaired soon, the crew will not survive.
+            Referring to your training, the cause is:
+        <br>
+        
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+
+            {% for subfield in form.tank_reason %}
+                <label>
+                    {{ subfield }}{{ subfield.label.text }}
+                </label><br>
+            {% endfor %}
+            <br>
+            
+            <!-- Submit Button -->
+            <input type="submit" value="Continue" class = "continue-btn">
+        </form>
+    </div>
+</div>
+
+<br>
+
+
+</p>
+{% endblock %}

@@ -11,25 +11,29 @@
 
 {% block main_text %}
 
-<p class="t_title">
-
-You are having breakfast talking about a normal ship life with your colleagues. 
-The night shift starts to talk about a shake happened last night, which has never happened before, 
-something is not feeling right today. 
-   
-<br><br>
-<div class="container"></div>
-    <img src="{{ url_for('static', filename='img/breakfast.jpg') }}" alt="Example Image" style="width: 90%; height: auto;">
-
+<div class="grid-content">
+    <div class="left-part">
+        <br>
+        <div class="container">
+            <img src="{{ url_for('static', filename='img/breakfast_.jpg') }}" 
+            alt="Example Image" style="width: 80%; height: auto;">
+        </div>
+    </div>
+    <div class="right-part">
+        <p class="t_title">
+            With all the knowledge in mind, now you are on the spaceship. One day as usual, you are having breakfast talking about a 
+            normal ship life with your colleagues. 
+            The night shift starts to talk about a shake that happened last night. This has never happened before, 
+            something is not feeling right today. 
+            <br><br>
+            <button onclick="fn1()" id="btn1" class = "continue-btn">Continue</button>
+        </p>
+    </div>
 </div>
-
-<br><br>
-
-<!-- <img src="{{ url_for('static', filename='img/livingroom.jpg') }}" alt="Example Image" style="width: 100%;">
-</p> -->
+    
 
 {% endblock %}
 
 {% block continue %}
-<button onclick="fn1()" id="btn1" class = "continue-btn">Continue</button>
+
 {% endblock %}

@@ -11,24 +11,45 @@
 
 {% block main_text %}
 
-{% if error %}
+<!-- {% if error %}
 <div style="color: red; margin-bottom: 20px;">{{ error }}</div>
 
-{% endif %}
-<p class="t_title">
+{% endif %} -->
 
-    You discovers that the failure was caused by a random cosmic ray strike, 
-    a rare but devastating event in deep space. The strike has irreparably damaged 
-    key components of the oxygen supply system, leaving the crew with limited options. 
-     Despite their collective expertise and tireless efforts to repair the system, 
-     it becomes increasingly evident that the damage is beyond their ability to fix.
-<br>
-</p>
+<div class="grid-content">
+    <div class="left-part">
+        <br>
+        <div class="container">
+        <img src="{{ url_for('static', filename='img/fix_result.jpg') }}" alt="Example Image" 
+        style="width: 100%; height: auto;">
+        </div>
+    </div>
+    <div class="right-part">
+        <p class="t_title">
+
+
+
+        You discover that the failure was caused by your colleage, David's neglegtion of maintenance duty. 
+        He deliberately neglected his maintenance duties yesterday, 
+        directly causing the failure. 
+        Worse, it’s not his first offense. Over the course of the mission, David 
+        has shown a careless disregard for protocols, putting lives at risk time and time again. 
+        He has been warned before, but this time, David’s negligence has brought the situation 
+        to the brink of catastrophe. 
+        You can fix the issue, but it is going to be a long and demanding shift.
+        <br>
+        </p>
+        <br>
+        <button onclick="fn1()" id="btn1" class = "continue-btn">Continue</button>
+    </div>
+</div>
+
+
 
 
 <br>
 
 {% endblock %}
 {% block continue %}
-<button onclick="fn1()" id="btn1" class = "continue-btn">Continue</button>
+
 {% endblock %}
