@@ -1,0 +1,34 @@
+<!-- page 7 -->
+{% extends 'base.html' %}
+
+{% block script %}
+<script>
+    function fn1(){
+        window.location="emo";
+    }
+</script>
+{% endblock %}
+
+{% block main_text %}
+
+{% if error %}
+<div style="color: red; margin-bottom: 20px;">{{ error }}</div>
+
+{% endif %}
+<p class="t_title">
+
+    You discovers that the failure was caused by a random cosmic ray strike, 
+    a rare but devastating event in deep space. The strike has irreparably damaged 
+    key components of the oxygen supply system, leaving the crew with limited options. 
+     Despite their collective expertise and tireless efforts to repair the system, 
+     it becomes increasingly evident that the damage is beyond their ability to fix.
+<br>
+</p>
+
+
+<br>
+
+{% endblock %}
+{% block continue %}
+<button onclick="fn1()" id="btn1" class = "continue-btn">Continue</button>
+{% endblock %}

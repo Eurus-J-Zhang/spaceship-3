@@ -1,0 +1,40 @@
+<!-- page 9 -->
+{% extends 'base.html' %}
+
+{% block main_text %}
+
+<p class="t_title">
+
+Here is the appraisal check:
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    
+    <!-- Question 1 -->
+    <td>Who caused the problem?<br></td>
+    {% for subfield in form.agent %}
+        <label>
+            {{ subfield }}{{ subfield.label.text }}
+        </label><br>
+    {% endfor %}
+    
+    <!-- Question 2 -->
+    <td>Is there anything you can do to solve the problem?<br></td>
+    {% for subfield in form.coping %}
+        <label>
+            {{ subfield }}{{ subfield.label.text }}
+        </label><br>
+    {% endfor %}
+    
+    <!-- Submit Button -->
+    <input type="submit" value="Submit" class = "continue-btn">
+</form>
+
+
+
+<br><br>
+
+<!-- <img src="{{ url_for('static', filename='img/A_key.jpg') }}" alt="Example Image" style="width: 100%;"> -->
+</p>
+
+{% endblock %}

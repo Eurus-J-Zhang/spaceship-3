@@ -1,0 +1,35 @@
+<!-- page 2 -->
+{% extends 'base.html' %}
+
+
+
+{% block main_text %}
+<br>
+<p class="t_title">
+    If the alarm rings and you saw the situation below, what could be the cause of the problem?
+</p>
+
+<p class="t_title">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <!-- Question 1 -->
+        <!-- <td>What might cause the problem?<br></td> -->
+        {% for subfield in form.tank_cause %}
+            <label>
+                {{ subfield }}{{ subfield.label.text }}
+            </label><br>
+        {% endfor %}
+        <br>
+        <img src="{{ url_for('static', filename='img/tank_in.jpg') }}" alt="Example Image" style="width: 90%; height: auto;">
+        
+        <br>
+        <br>
+        <!-- Submit Button -->
+        <input type="submit" value="Continue" class = "continue-btn">
+    </form>
+
+</p>
+
+
+{% endblock %}
